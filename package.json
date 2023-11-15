@@ -1,17 +1,18 @@
 {
-    "name": "node-chat",
-    "description": "a realtime chat web application",
-    "version": "0.4.0",
-    "main": "server.js",
-    "dependencies": {
-        "express": "3.4.x",
-        "socket.io": "0.9.x"
-    },
-    "engines": {
-        "node": "0.10.x",
-        "npm": "1.2.x"
-    },
-    "scripts": {
-        "start": "node server.js"
-    }
+  "name": "node-chat",
+  "description": "a realtime chat web application",
+  "version": "0.4.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^3.4.0",
+    "socket.io": "0.9.x",
+    "axios": "^0.24.0"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
 }
