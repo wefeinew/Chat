@@ -133,7 +133,7 @@ NodeChat.prototype = {
         var emojiContainer = document.getElementById('emojiWrapper'),
             docFragment = document.createDocumentFragment();
 //started
-      for (var i = 71; i > 0; i--) {
+      for (var i = 99; i > 0; i--) {
             var emojiItem = document.createElement('img');
             emojiItem.src = '../content/emoji/' + i + '.gif';
             emojiItem.title = i;
