@@ -30,8 +30,8 @@ NodeChat.prototype = {
             }
         });
         this.socket.on('system', function(nickName, userCount, type) {
-            var msg = nickName + (type == 'login' ? ' joined' : ' left');
-            that._displayNewMsg('system ', msg, 'red');
+            var msg = nickName + (type == 'login' ? ' has been joined' : ' has been left');
+            that._displayNewMsg('System ', msg, 'blue');
             document.getElementById('status').textContent = userCount + (userCount > 1 ? ' users' : ' user') + ' online';
         });
         this.socket.on('newMsg', function(user, msg, color) {
@@ -40,6 +40,15 @@ NodeChat.prototype = {
         this.socket.on('newImg', function(user, img, color) {
             that._displayImage(user, img, color);
         });
+         this.socket.on('sponsorAd', function(adMessage) {
+            var container = document.getElementById('historyMsg'),
+                adToDisplay = document.createElement('p');
+            adToDisplay.style.color = 'green'; // Цвет рекламного сообщения
+            adToDisplay.innerHTML = '<span class="timespan">(Ad): </span>' + adMessage;
+            container.appendChild(adToDisplay);
+            container.scrollTop = container.scrollHeight;
+        });
+      
         document.getElementById('loginBtn').addEventListener('click', function() {
             var nickName = document.getElementById('nicknameInput').value;
             if (nickName.trim().length != 0) {
